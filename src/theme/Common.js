@@ -22,6 +22,13 @@ export default function ({ Colors, ...args }) {
         borderRadius: 10,
         paddingStart: 20,
       },
+      textContainer: {
+        backgroundColor: Colors.inputBackground,
+        color: Colors.textGray400,
+        height: 45,
+        borderRadius: 10,
+        overflow: 'hidden',
+      },
     }),
   };
 }

@@ -26,8 +26,7 @@ const Example = () => {
     darkMode: isDark,
   } = useTheme();
   const dispatch = useDispatch();
-  const [fetchOne, { data, isSuccess, isLoading, isFetching }] =
-    useLazyFetchOneQuery();
+  const [fetchOne, { data, isSuccess, isLoading, isFetching }] = {};
   useEffect(() => {
     if (isSuccess && data?.name) {
       Alert.alert(t('example:helloUser', { name: data.name }));
@@ -217,7 +216,7 @@ const Example = () => {
           <TouchableOpacity
             style={[Common.button.circle, Gutters.regularBMargin]}
             onPress={() =>
-              onChangeLanguage(i18next.language === 'fr' ? 'en' : 'fr')
+              onChangeLanguage(i18next.language === 'ar' ? 'en' : 'ar')
             }
           >
             <Image

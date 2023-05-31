@@ -5,6 +5,8 @@ export const Colors = {
   textGray200: '#BABABA',
   inputBackground: '#3a3a3a',
   circleButtonBackground: '#252732',
+  white: '#000000',
+  black: '#FFFFFF',
 };
 export const NavigationColors = {
   primary: Colors.primary,
