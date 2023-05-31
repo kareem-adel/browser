@@ -81,6 +81,9 @@ export default function ({}) {
     selfStretch: {
       alignSelf: 'stretch',
     },
+    selfCenter: {
+      alignSelf: 'center',
+    },
     /* Sizes Layouts */
     fill: {
       flex: 1,

@@ -1,0 +1,32 @@
+diff --git a/node_modules/react-native-webview/.DS_Store b/node_modules/react-native-webview/.DS_Store
+new file mode 100644
+index 0000000..928aae8
+Binary files /dev/null and b/node_modules/react-native-webview/.DS_Store differ
+diff --git a/node_modules/react-native-webview/apple/RNCWebViewImpl.m b/node_modules/react-native-webview/apple/RNCWebViewImpl.m
+index c6d18bb..cfa203b 100644
+--- a/node_modules/react-native-webview/apple/RNCWebViewImpl.m
++++ b/node_modules/react-native-webview/apple/RNCWebViewImpl.m
+@@ -431,9 +431,9 @@ RCTAutoInsetsProtocol>
+     _webView.scrollView.scrollEnabled = _scrollEnabled;
+     _webView.scrollView.pagingEnabled = _pagingEnabled;
+     //For UIRefreshControl to work correctly, the bounces should always be true
+-    _webView.scrollView.bounces = _pullToRefreshEnabled || _bounces;
+-    _webView.scrollView.showsHorizontalScrollIndicator = _showsHorizontalScrollIndicator;
+-    _webView.scrollView.showsVerticalScrollIndicator = _showsVerticalScrollIndicator;
++    _webView.scrollView.bounces = NO;//_pullToRefreshEnabled || _bounces;
++    _webView.scrollView.showsHorizontalScrollIndicator = NO;//_showsHorizontalScrollIndicator;
++    _webView.scrollView.showsVerticalScrollIndicator = NO;//_showsVerticalScrollIndicator;
+     _webView.scrollView.directionalLockEnabled = _directionalLockEnabled;
+ #endif // !TARGET_OS_OSX
+     _webView.allowsLinkPreview = _allowsLinkPreview;
+@@ -1466,7 +1466,9 @@ didFinishNavigation:(WKNavigation *)navigation
+ {
+   _bounces = bounces;
+   //For UIRefreshControl to work correctly, the bounces should always be true
+-  _webView.scrollView.bounces = _pullToRefreshEnabled || bounces;
++  _webView.scrollView.bounces = NO;//_pullToRefreshEnabled || bounces;
++  _webView.scrollView.alwaysBounceHorizontal = NO;
++  _webView.scrollView.alwaysBounceVertical = NO;
+ }
+ #endif // !TARGET_OS_OSX
+ 
